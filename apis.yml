@@ -1,7 +1,28 @@
 aid: torchdental
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/torchdental.png
 name: Torchdental
-description: Torchdental is a company surfaced as a portfolio company of felicis and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Torchdental (Torch Dental) is a B2B dental-supply procurement platform for
+  independent dental practices and dental groups. It runs a web application at
+  app.torchdental.com that lets practices order dental supplies and equipment
+  from multiple vendors in one place, compare prices, manage recurring ordering
+  and budgets, and streamline back-office purchasing. The company is venture
+  backed and was surfaced as a portfolio company of Felicis. As of this
+  enrichment pass Torchdental exposes no public developer/API surface: no
+  api/docs/developer subdomains resolve, and the application host publishes no
+  /.well-known/ discovery documents. This profile therefore captures company
+  identity and probed domain-security posture only.
 url: https://raw.githubusercontent.com/api-evangelist/torchdental/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +32,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Dental
+- Healthcare
+- Procurement
+- E-Commerce
+- Supply Chain
+- B2B
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +51,12 @@ maintainers:
 common:
 - type: Website
   url: https://torchdental.com
+- type: Login
+  url: https://app.torchdental.com
+- type: DomainSecurity
+  url: security/torchdental-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1

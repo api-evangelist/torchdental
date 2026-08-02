@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: probed
+source: live probes of /.well-known/ on marketing + app hosts
+notes: >-
+  torchdental.com is served behind a ServerGuard bot-challenge (sgcaptcha) that
+  returns HTTP 202 with a captcha redirect for every path, so those probes are
+  inconclusive (challenge, not a real document). app.torchdental.com (the SaaS
+  web app) responds directly and returns 404 for every well-known path. No
+  developer/API discovery surface was found.
+hosts:
+- host: https://app.torchdental.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://torchdental.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    note: captcha challenge (sgcaptcha), not a document
+  - path: /.well-known/openid-configuration
+    status: 202
+    note: captcha challenge (sgcaptcha), not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    note: captcha challenge (sgcaptcha), not a document
+  - path: /.well-known/api-catalog
+    status: 202
+    note: captcha challenge (sgcaptcha), not a document
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    note: captcha challenge (sgcaptcha), not a document
